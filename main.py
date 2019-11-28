@@ -1,4 +1,5 @@
 import sys
+from statistics import mean
 
 
 def main():
@@ -8,6 +9,15 @@ def main():
     print(f"Processing input file: {input_file_path}")
 
     # TODO: Fill in the actual logic here!
+    with open(input_file_path, "r") as f:
+        for line in f:
+            integers = line.split(",")
+            catalog = []
+            for c in integers:
+                catalog.append(float(c))
+            print(f"{mean(catalog)}")
+
+
 
 
 if __name__ == "__main__":
